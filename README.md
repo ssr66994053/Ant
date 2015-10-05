@@ -6,10 +6,12 @@ ant is a file move tool writen by Go.
     go build
     go install
 
+make sure the `$GOPATH/bin` is added into `$PATH`
+
 ## Usage:
     ant [flags] FROM PATTERN TO [FROM PATTERN TO]
 
-* ###flags:
+###flags: 
     -h                  print usage
     -v                  print version number
     -loop=n, -loop n    loop n times, sleep 5 second per loop. 
@@ -20,17 +22,17 @@ ant is a file move tool writen by Go.
                         default c = "none"
 priority: -cron > -time > -loop > default mode[-loop=1]
 
-* ###FROM:
-ant can watch the [**FROM**] directory(if the dir is exists) if there is a file name match the [**PATTERN**] then move the file to the [**TO**] directory. keyword[**$**] present last [**FROM**]. 
+###FROM:
+ant can watch the `FROM` directory(if the dir is exists) if there is a file name match the `PATTERN` then move the file to the `TO` directory. keyword `$` present last `FROM`. 
 
-* ###PATTERN:
-it must be a regexp. like "H.* ", so "Hello World!" will be match. keyword[**$**] present last [**PATTERN**].
+###PATTERN:
+it must be a regexp. like "H.* ", so "Hello World!" will be match. keyword `$` present last `PATTERN`.
 
-* ###TO:
-if file is matched, then it will move to the [**TO**] directory(if it is not exists, ant will create it, otherwise ant will rewrite it). keyword[**$**] present last [**TO**].
+###TO:
+if file is matched, then it will move to the `TO` directory(if it is not exists, ant will create it, otherwise ant will rewrite it). keyword `$` present last `TO`.
 
-* ###Tips:
-some special keywords in [FROM][PATTERN][TO] can be replace when ant run.
+###Tips:
+some special keywords in `FROM` `PATTERN` `TO` can be replaced when ant run.
  
 * {date}      date.                 like 20060102
 * {time}      time.                 like 150405
